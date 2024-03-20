@@ -33,7 +33,7 @@ void Money::Read()
 
 }
 
-void Money::Display()
+void Money::Display() const
 {
 	cout << endl;
 	cout << "Money = " << first << "," << static_cast<int>(second) << endl;
@@ -65,15 +65,15 @@ Money Money::Minus(Money l, Money r)
 		t.second = r.second - l.second;
 		return t;
 	}
-
 }
 
-double Money::Multiple(double number)
+Money Money::Multiply(double number, Money l)
 {
-	int coin;
-	coin = static_cast<int>(second);
-
-	double result = first + (coin / 10.0);
-
-	return result * number;
+	Money result;
+	if (static_cast<int>(l.second) * number > 10)
+	{
+		result.first = l.first * number + 1;
+		result.second = static_cast<int>(l.second) * number - 10;
+	}
+	return result;
 }

@@ -13,12 +13,12 @@ public:
 
 	bool Init(long, char);
 	void Read();
-	void Display();
+	void Display() const;
 	std::string toString() const;
 
-
+		
 	static Money Minus(Money l, Money r);
-	double Multiple(double number);
+	static Money Multiply(double number, Money);
 	bool operator== (Money l)
 	{
 		return (this->first == l.first);

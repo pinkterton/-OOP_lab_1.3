@@ -12,20 +12,25 @@ int main()
 	b.SetFirst(1414);
 	b.SetSecond(6);
 	b.Display();
+	cout << endl;
+
 
 	c = Money::Minus(b, a);
-	cout << c.GetFirst() << " " << c.GetSecond() << endl;
+	cout << "Minus operation: \n";
+	cout << c.GetFirst() << "," << c.GetSecond() << endl;
 	cout << endl;
 
 	if (b.operator>(a))
 	{ 
-		double result = b.Multiple(2);
-		cout << "B multiplied by 2 \n" << "Money = " << result << endl;
+		d = Money::Multiply(2, b);
+		cout << "B multiplied by 2 \n";
+		cout << d.GetFirst() << "," << d.GetSecond() << endl;
 	}
 	else
 	{
-		double result = a.Multiple(2);
-		cout << "B multiplied by 2 \n" << "Money = " << result << endl;
+		d = Money::Multiply(2, a);
+		cout << "A multiplied by 2 \n";
+		cout << d.GetFirst() << "," << d.GetSecond() << endl;
 	}
 
 	return 0;
